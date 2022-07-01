@@ -1,3 +1,6 @@
 Personal configuration for NVChad Neovim distribution.
 
-Clone into ~/.config and symbolically link to ~/.config/lua/custom
+Clone into ~/.config then symbolically link to nvim config:
+'''bash
+  ln -s ~/.config/nvChadConfig/custom ~/.config/nvim/lua/custom
+'''
