@@ -4,16 +4,36 @@ local M = {}
 
 M.treesitter = {
   ensure_installed = {
-    "vim",
-    "html",
+    "bash",
+    "c",
+    "c_sharp",
+    "cmake",
+    "cpp",
     "css",
+    "dockerfile",
+    "html",
+    "http",
     "javascript",
     "json",
-    "toml",
+    "lua",
+    "make",
     "markdown",
-    "c",
-    "bash",
-    "lua"
+    "python",
+    "regex",
+    "scss",
+    "toml",
+    "typescript",
+    "vim",
+    "json",
+  },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
+    },
   },
 }
 

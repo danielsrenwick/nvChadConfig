@@ -41,13 +41,6 @@ return {
     end,
   },
 
-  ["nvim-treesitter/playground"] = {
-    cmd = "TSCaptureUnderCursor",
-    config = function()
-      require("nvim-treesitter.configs").setup()
-    end,
-  },
-
   ["andreadev-it/shade.nvim"] = {
     module = "shade",
     config = function()
@@ -92,4 +85,18 @@ return {
       require("telescope").load_extension "media_files"
     end,
    },
+
+   ["olimorris/persisted.nvim"] = {
+     after = "telescope.nvim",
+     config = function()
+       require("persisted").setup()
+       require("telescope").load_extension("persisted")
+      end,
+   },
+
+  ["f-person/git-blame.nvim"] = {
+    config = function()
+      require "custom.plugins.git-blame"
+    end,
+  }
 }
