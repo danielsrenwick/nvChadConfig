@@ -22,6 +22,10 @@ return {
     end,
   },
 
+  ["jose-elias-alvarez/nvim-lsp-ts-utils"] = {
+    after = "nvim-lspconfig",
+  },
+
   ["Pocco81/TrueZen.nvim"] = {
     cmd = {
       "TZAtaraxis",

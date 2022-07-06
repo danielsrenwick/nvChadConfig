@@ -5,14 +5,10 @@ local sources = {
 
   -- eslint
   b.formatting.eslint,
-  b.diagnostics.eslint.with {
-    "javascript", "javascriptreact"
-  },
+  b.diagnostics.eslint,
 
   -- webdev stuff
-  b.formatting.prettierd.with {
-    filetypes = { "html", "json", "yaml", "markdown", "css" }
-  },
+  b.formatting.prettier,
   b.formatting.deno_fmt,
 
   -- lua
@@ -34,7 +30,20 @@ M.setup = function()
     debug = true,
     sources= sources,
     -- format on save
-    on_attach = function(client)
+    on_attach = function(client, bufnr)
+      vim.cmd("command! LspDef lua vim.lsp.buf.definition()")
+      vim.cmd("command! LspFormatting lua vim.lsp.buf.formatting()")
+      vim.cmd("command! LspCodeAction lua vim.lsp.buf.code_action()")
+      vim.cmd("command! LspHover lua vim.lsp.buf.hover()")
+      vim.cmd("command! LspRename lua vim.lsp.buf.rename()")
+      vim.cmd("command! LspRefs lua vim.lsp.buf.references()")
+      vim.cmd("command! LspTypeDef lua vim.lsp.buf.type_definition()")
+      vim.cmd("command! LspImplementation lua vim.lsp.buf.implementation()")
+      vim.cmd("command! LspDiagPrev lua vim.diagnostic.goto_prev()")
+      vim.cmd("command! LspDiagNext lua vim.diagnostic.goto_next()")
+      vim.cmd("command! LspDiagLine lua vim.diagnostic.open_float()")
+      vim.cmd("command! LspSignatureHelp lua vim.lsp.buf.signature_help()")
+
       if client.resolved_capabilities.document_formatting then
         vim.cmd "autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()"
       end
