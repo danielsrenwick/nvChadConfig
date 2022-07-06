@@ -102,5 +102,18 @@ return {
     config = function()
       require "custom.plugins.git-blame"
     end,
+  },
+
+  ["TimUntersberger/neogit"] = {
+    config = function()
+      require("neogit").setup()
+    end,
+  },
+
+  ["sindrets/diffview.nvim"] = {
+    after = "plenary.nvim",
+    config = function()
+      require("diffview").setup()
+    end,
   }
 }
