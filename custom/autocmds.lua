@@ -12,3 +12,8 @@ autocmd("FileType", {
     opt.foldlevel = 10
   end,
 })
+
+autocmd("BufWrite", {
+  pattern = { "*.c", "*.cpp", "*.h", "*.hpp", "*.hxx", "*.hh" },
+  command = "!bear -- make",
+})
