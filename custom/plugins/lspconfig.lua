@@ -5,8 +5,8 @@ M.setup_lsp = function(attach, capabilities)
 
   local servers = {
     'bashls',
-    'cmake',
     'clangd',
+    'cmake',
     'cssls',
     'eslint',
     'html',

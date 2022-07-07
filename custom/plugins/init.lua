@@ -14,8 +14,7 @@ return {
       end
     end,
   },
-
-  ["jose-elias-alvarez/null-ls.nvim"] = {
+["jose-elias-alvarez/null-ls.nvim"] = {
     after = "nvim-lspconfig",
     config = function()
       require("custom.plugins.null-ls").setup()
@@ -104,20 +103,36 @@ return {
     end,
   },
 
-  ["sindrets/diffview.nvim"] = {
-    config = function()
-      require("plenary")
-      require("diffview").setup()
-    end,
-  },
-
   ["TimUntersberger/neogit"] = {
-    after = "diffview.nvim",
+    after = {
+      "plenary.nvim"
+    },
+    requires = {
+      'sindrets/diffview.nvim'
+    },
     config = function()
       require "custom.plugins.neogit"
+      "plenary.nvim"
     end,
   },
 
   ["vim-test/vim-test"] = {
-  }
+    config = function()
+      vim.g['test#strategy'] = 'neovim'
+    end,
+  },
+
+  ["sQVe/sort.nvim"] ={
+  },
+
+  ["mfussenegger/nvim-dap"] = {
+
+  },
+
+  ["rcarriga/nvim-dap-ui"] ={
+    after = "nvim-dap",
+    config = function()
+      require("dapui")
+    end,
+  },
 }

@@ -24,7 +24,6 @@ M.treesitter = {
     "toml",
     "typescript",
     "vim",
-    "json",
   },
   incremental_selection = {
     enable = true,
