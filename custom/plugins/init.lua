@@ -104,16 +104,20 @@ return {
     end,
   },
 
-  ["TimUntersberger/neogit"] = {
+  ["sindrets/diffview.nvim"] = {
     config = function()
-      require("neogit").setup()
+      require("plenary")
+      require("diffview").setup()
     end,
   },
 
-  ["sindrets/diffview.nvim"] = {
-    after = "plenary.nvim",
+  ["TimUntersberger/neogit"] = {
+    after = "diffview.nvim",
     config = function()
-      require("diffview").setup()
+      require "custom.plugins.neogit"
     end,
+  },
+
+  ["vim-test/vim-test"] = {
   }
 }

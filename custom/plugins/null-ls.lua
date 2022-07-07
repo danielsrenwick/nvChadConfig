@@ -4,12 +4,9 @@ local b = null_ls.builtins
 local sources = {
 
   -- eslint
-  b.formatting.eslint,
-  b.diagnostics.eslint,
-
-  -- webdev stuff
+  b.diagnostics.eslint_d,
+  b.code_actions.eslint_d,
   b.formatting.prettier,
-  b.formatting.deno_fmt,
 
   -- lua
   b.formatting.stylua,
