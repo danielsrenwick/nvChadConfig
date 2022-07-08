@@ -103,16 +103,15 @@ return {
     end,
   },
 
+  ["nvim-lua/plenary.nvim"] = { },
+
   ["TimUntersberger/neogit"] = {
-    after = {
-      "plenary.nvim"
-    },
+    after = "plenary.nvim",
     requires = {
       'sindrets/diffview.nvim'
     },
     config = function()
       require "custom.plugins.neogit"
-      "plenary.nvim"
     end,
   },
 
@@ -122,17 +121,37 @@ return {
     end,
   },
 
-  ["sQVe/sort.nvim"] ={
-  },
+  ["sQVe/sort.nvim"] = { },
 
-  ["mfussenegger/nvim-dap"] = {
-
-  },
+  ["mfussenegger/nvim-dap"] = { },
 
   ["rcarriga/nvim-dap-ui"] ={
     after = "nvim-dap",
     config = function()
       require("dapui")
+    end,
+  },
+
+  ["cljoly/telescope-repo.nvim"] = {
+    after = {
+      "plenary.nvim",
+      "telescope.nvim",
+    },
+    config = function()
+      require("telescope").load_extension("repo")
+    end,
+  },
+
+  ["lewis6991/spellsitter.nvim"] = {
+    after = "nvim-treesitter",
+    config = function()
+      require("spellsitter").setup()
+    end,
+  },
+
+  ["yamatsum/nvim-cursorline"] = {
+    config = function ()
+      require "custom.plugins.cursorline"
     end,
   },
 }

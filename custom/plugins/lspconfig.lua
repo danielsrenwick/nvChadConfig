@@ -16,6 +16,8 @@ M.setup_lsp = function(attach, capabilities)
     'rust_analyzer',
     'sqls',
     'sumneko_lua',
+    'terraformls',
+    'tflint',
     'vimls',
     'yamlls',
   }
