@@ -58,6 +58,15 @@ M.setup_lsp = function(attach, capabilities)
     on_attach = attach,
     capabilities = capabilities
   }
+
+  -- virtual text
+
+  vim.diagnostic.config({
+     virtual_text = false
+  })
+
+  vim.o.updatetime = 100
+  vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 end
 
 return M
